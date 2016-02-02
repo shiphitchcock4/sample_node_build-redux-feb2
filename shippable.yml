@@ -4,6 +4,8 @@ language: node_js
 # Version number
 node_js:
   - 0.12
+  - 5.0
+  - 0.11
 
 env:
   global:
@@ -13,9 +15,9 @@ env:
     - M1=ONE
 
 matrix:
-allow_failures:
-  - node_js: 0.12
-  - node_js: 5.0
+  allow_failures:
+     - node_js: 0.12
+     - node_js: 5.0
   
 build:
   pre_ci:
