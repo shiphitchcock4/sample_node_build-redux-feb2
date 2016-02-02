@@ -8,8 +8,8 @@ node_js:
   #- 9.9
   
 env:
-  M1=ONE
-  M2=two
+  - M1=ONE
+  - M2=two
 
 matrix:
   allow_failures:
