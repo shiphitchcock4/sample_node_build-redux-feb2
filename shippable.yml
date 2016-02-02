@@ -9,6 +9,8 @@ node_js:
 
 services:
  - redis
+ - mysql22
+ - selenium
  
 env:
   - M1=one
@@ -23,7 +25,7 @@ matrix:
 build:
   
   pre_ci_boot:
-    image_name: node
+    image_name: ubuntu
     image_tag: latest
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
