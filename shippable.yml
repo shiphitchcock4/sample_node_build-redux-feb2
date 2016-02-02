@@ -13,6 +13,7 @@ env:
   matrix:
     - M1=ONE
     - M2=two
+    - M3=three
     
 matrix:
   allow_failures:
@@ -39,7 +40,7 @@ build:
     - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi 
     - npm install
     - npm test
-    - echo $M1 and $M2
+    - echo $M1 and $M2 and $M3
 
   
 
