@@ -21,6 +21,8 @@ matrix:
       env: M1=ONE
     - node_js: 0.12
       env: M2=two
+    - node_js: 0.12
+      env: M3=three
   
 
 
