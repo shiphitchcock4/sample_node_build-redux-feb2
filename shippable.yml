@@ -16,7 +16,7 @@ build:
 
   pre_ci_boot:
     image_name: drydock/u12nod
-    image_tag: test
+    image_tag: tip
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
@@ -25,7 +25,7 @@ build:
     - ls -al
     - npm install
     - npm test
-    - shippable_retry 'if [ $i -eq 4 ]; then echo "done"; else foobar$i; fi'
+    - shippable_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
 
   post_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node .
