@@ -16,7 +16,7 @@ env:
     
 matrix:
   allow_failures:
-    - 0.12
+    - node_js: 0.12
   
 
 
