@@ -7,6 +7,9 @@ node_js:
   - 0.11
   - 5.0
 
+services:
+ - redis
+ 
 env:
   - M1=one
   - M2=two
