@@ -11,6 +11,9 @@ env:
   - M1=ONE
   - M2=two
 
+services:
+  - mysql
+  
 matrix:
   allow_failures:
     - node_js: 0.12
