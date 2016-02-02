@@ -5,7 +5,7 @@ language: node_js
 node_js:
   - 0.12
   - 0.10
-  - 4.2.2
+  - 9.9
   
 
 matrix:
@@ -17,6 +17,7 @@ matrix:
       env: M1=ONE
     - node_js: 4.2.2
       env: M2=two
+    - node_js: 9.9
 
 build:
   
