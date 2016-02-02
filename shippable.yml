@@ -4,19 +4,12 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 9.9
+ 
+services:
+ - mysql
   
 
-env:
-  - M1=ONE
-  - M2=two
 
-matrix:
-  allow_failures:
-     - node_js: 0.12
-       env: M1= ONE
-     - node_js: 9.9
-      
 build:
   pre_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node .
@@ -34,7 +27,7 @@ build:
     - npm install
     - node --version
 
-    - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi
+   # - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi
   #  - if [ "$SHIPPABLE_NODE_VERSION" == "5.0" ]; then foobar; fi 
     
     - npm test
