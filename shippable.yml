@@ -11,8 +11,6 @@ env:
 
   matrix:
     - M1=ONE
-    
-
 build:
   pre_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node_feb2 .
