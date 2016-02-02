@@ -32,9 +32,13 @@ build:
   ci:
     - ps -eax
     - ls -al
+    - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
+    - npm install
+    - node --version
+
     - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi
     - if [ "$SHIPPABLE_NODE_VERSION" == "5.0" ]; then foobar; fi 
-    - npm install
+    
     - npm test
 
   #post_ci:
