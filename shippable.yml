@@ -31,8 +31,9 @@ build:
   ci:
     - ps -eax
     - ls -al
-    - nvm install $SHIPPABLE_NODE_VERSION
-    - nvm use $SHIPPABLE_NODE_VERSION
+    - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
+   # - source nvm install $SHIPPABLE_NODE_VERSION
+    #- nvm use $SHIPPABLE_NODE_VERSION
     - node --version
     - npm test
 
