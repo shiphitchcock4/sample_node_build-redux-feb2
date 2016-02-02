@@ -25,6 +25,9 @@ matrix:
     - node_js: "5.0"
       env:
          - key1=aaa
+         - key3=bbbb
+    - node_js: "0.10"
+      env: key2=aaaaa
 
 build:
   
