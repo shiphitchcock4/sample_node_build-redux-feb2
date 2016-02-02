@@ -4,6 +4,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
+  - 0.11
 
 env:
   global:
@@ -11,6 +12,12 @@ env:
 
   matrix:
     - M1=ONE
+    - M2=two
+    
+matrix:
+  allow_failures:
+    - 0.12
+  
 
 
 build:
@@ -26,6 +33,9 @@ build:
   ci:
     - ps -eax
     - ls -al
+    - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi 
+    - npm install
+    - npm test
 
   post_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node .
