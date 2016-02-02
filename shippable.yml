@@ -37,7 +37,7 @@ build:
     - npm test
 
   post_ci:
-    - docker push shiphitchcock2_sample_node_feb2
+    - docker push shippabledocker/shiphitchcock2_sample_node_feb2
 
 integrations:
   hub:
