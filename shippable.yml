@@ -4,37 +4,27 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 9.9
  
-matrix:
- allow_failures:
-   - node_js: 9.9
-     env: M1=ONE
-   
-
 env:
   global:
     - FOO=FUBU
 
-  matrix:
-    - M1=ONE
-    - M2=two
-
+  
 build:
   #pre_ci:
    # - docker build -t=shippabledocker/shiphitchcock2_sample_node .
 
-  #pre_ci_boot:
-   # image_name: shippabledocker/shiphitchcock2_sample_node 
-    #image_tag: latest
-    #pull: false
-    #options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+  pre_ci_boot:
+    image_name: node
+    image_tag: latest
+    pull: true
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - ps -eax
     - ls -al
     - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi 
-    - if [ "$SHIPPABLE_NODE_VERSION" == "5.0" ]; then foobar; fi 
+    
     - npm install
     - npm test
 
