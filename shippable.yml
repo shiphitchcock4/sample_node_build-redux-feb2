@@ -4,8 +4,8 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 0.10
-  - 9.9
+  - "0.10"
+  #- 9.9
   
 
 matrix:
@@ -15,9 +15,16 @@ matrix:
   allow_failures:
     - node_js: 0.12
       env: M1=ONE
-    - node_js: 4.2.2
-      env: M2=two
-    - node_js: 9.9
+    - node_js: 0.12
+     
+  exclude:
+    - node_js: "0.10"
+    - node_js: "4.2.2"
+    
+  include:
+    - node_js: "5.0"
+      env:
+         - key1=aaa
 
 build:
   
@@ -29,6 +36,7 @@ build:
     - if [ "$SHIPPABLE_NODE_VERSION" == "4.2.2" ]; then foobar; fi
     - npm install
     - npm test
+    - echo $key1
 
   
 
