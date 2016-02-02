@@ -8,16 +8,15 @@ node_js:
   - 0.11
 
 env:
-  global:
-    - FOO=FUBU
-
-  matrix:
-    - M1=ONE
+  - M1=ONE
+  - M2=two
 
 matrix:
   allow_failures:
      - node_js: 0.12
-     - node_js: 5.0
+       env: M1= ONE
+     - node_js: 0.12
+       env: M2= two
   
 build:
   pre_ci:
