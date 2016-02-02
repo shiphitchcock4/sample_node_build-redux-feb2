@@ -20,7 +20,7 @@ matrix:
 build:
   
   pre_ci_boot:
-  image_name: shippable/docker
+  image_name: ubuntu
   image_tag: latest
   pull: true
   options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
