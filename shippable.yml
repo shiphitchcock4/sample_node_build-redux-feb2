@@ -17,7 +17,7 @@ build:
   pre_ci_boot:
     image_name: drydock/u12nod
     image_tag: tip
-    pull: false
+    pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
@@ -27,12 +27,4 @@ build:
     - npm test
     - shippable_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
 
-  post_ci:
-    - docker build -t=shippabledocker/shiphitchcock2_sample_node .
-    - docker push shippabledocker/shiphitchcock2_sample_node 
-
-integrations:
-  hub:
-    - integrationName: ship-docker
-      type: docker
-    
+  
