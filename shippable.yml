@@ -17,10 +17,7 @@ services:
 matrix:
   allow_failures:
     - node_js: 0.12
-   
-    
-   
-     
+ 
   exclude:
     - node_js: "0.12"
     -  env: M1=ONE
