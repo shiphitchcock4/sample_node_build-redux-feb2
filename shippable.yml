@@ -29,6 +29,7 @@ build:
     - npm install
     - node --version
     - npm test
+    - sleep 6000s
 
   post_ci:
     - docker push shippabledocker/shiphitchcock2_sample_node_feb2
