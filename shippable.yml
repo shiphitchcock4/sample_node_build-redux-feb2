@@ -4,11 +4,29 @@ language: node_js
 # Version number
 node_js:
   - 0.12
- 
+  - 0.10.41
+  - "5.0"
+  - "0.11"
+  
 services:
   -  cassandra
   -  mysql2
-  
+
+matrix:
+  allow_failures:
+    - node_js: 0.12
+     
+    
+   
+     
+  exclude:
+    - node_js: "0.12"
+    - env: M1=ONE
+    - node_js: "5.0"
+      env: M2=TWO
+    - node_js: "0.11"
+    
+    
 build:
   #pre_ci:
    # - docker build -t=shippabledocker/shiphitchcock2_sample_node .
