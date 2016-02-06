@@ -16,6 +16,7 @@ build:
   pre_ci:
     - docker build -t=shippabledocker/shiphitchcock2_sample_node_feb2 .
 
+
   pre_ci_boot:
     image_name: shippabledocker/shiphitchcock2_sample_node_feb2
     image_tag: latest
