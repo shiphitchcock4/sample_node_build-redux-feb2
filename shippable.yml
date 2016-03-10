@@ -23,14 +23,14 @@ matrix:
      
   exclude:
     - node_js: "0.10"
-    - node_js: "4.2.2"
+   # - node_js: "4.2.2"
     
   include:
     - node_js: "5.0"
       env:
          - key1=aaa
          - key3=bbbb
-    - node_js: "0.10"
+    - node_js: "4.2.2"
       env: key2=aaaaa
 
 build:
