@@ -9,7 +9,7 @@ node_js:
   #- 9.9
   
 env:
-  - M1=ONE
+  - M1=ONE Foo=bar
   - M2=two
 
 services:
@@ -40,7 +40,7 @@ build:
     - ls -al
     - echo $M1 and $M2
     - if [ "$SHIPPABLE_NODE_VERSION" == "0.12" ]; then foobar; fi
-    - if [ "$SHIPPABLE_NODE_VERSION" == "4.2.2" ]; then foobar; fi
+    #- if [ "$SHIPPABLE_NODE_VERSION" == "4.2.2" ]; then foobar; fi
     - mysql -e "create database if not exists \`project-test\`;"
     - shippable_retry 'if [ $i -eq 3 ]; then echo "done"; else foobar$i; fi'
     - npm install
