@@ -47,12 +47,4 @@ build:
     - npm test
     - echo $key1
 
-   post_ci:
-    - docker build -t=shippabledocker/shiphitchcock2_sample_node_feb1 .
-    - docker push shippabledocker/shiphitchcock2_sample_node_feb1 
-
-integrations:
-  hub:
-    - integrationName: ship-docker
-      type: docker
-      
+  
